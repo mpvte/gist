@@ -10,4 +10,4 @@ _EOF_
 
 cf ic build -t ub:v1 . 
 
-cf ic ip bind $(cf ic ip request | cut -d \" -f 2 | tail -1) $(cf ic run --name=ub -p 22 registry.ng.bluemix.net/`cf ic namespace get`/ub:v1)
+cf ic ip bind $(cf ic ip request | cut -d \" -f 2 | tail -1) $(cf ic run --name=ub -m 1024 -p 22 registry.ng.bluemix.net/`cf ic namespace get`/ub:v1)
